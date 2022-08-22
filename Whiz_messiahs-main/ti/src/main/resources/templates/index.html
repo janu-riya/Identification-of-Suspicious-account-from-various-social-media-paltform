@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>TPI</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script nonce="undefined" src="https://cdn.zingchart.com/zingchart.min.js"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Terrorist Profile Identification</h1>
+  <p>Whiz Messiahs - Nadar Saraswathi College of Engineering and Technology</p> 
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4"></div>
+		<div class="col-lg-4">
+			<div class="row">
+				<div class="col-lg-8"><input class="form-control" type="text" placeholder="Email" id="searchTerm"/></div>
+				<div class="col-lg-4"><button class="btn btn-primary" onclick="search();">Search</button></div>
+			</div>
+		</div>
+		<div class="col-lg-4"></div>
+		<br><br><hr><br>
+	</div>
+	
+	<div class="row" id = "profile-div">
+		<div class="col-lg-3"></div>
+		<div class="col-lg-6">
+			<div class="row">
+				<table class="table table-hover text-center">
+					<thead>
+					  <tr>
+						<th>Source</th>
+					  </tr>
+					</thead>
+					<tbody id="social-tbody">
+					  
+					</tbody>
+			  </table>
+			</div>
+		</div>
+		<div class="col-lg-3"></div>
+		<div class="row">
+			<div class="col-lg-5"></div>
+			<div class="col-lg-2"><button class="btn btn-primary" id="btn-analyze" onclick="analyze();">Analyze</button></div>
+			<div class="col-lg-5"></div>
+		</div>
+		<br><br><hr><br>
+	</div>
+	<div class="row" id="result-div">
+		<div class="row">
+			<div class="col-lg-12" id = "chart1" style="border:1px solid #000000;">
+				<table class="table table-hover text-center">
+					<thead>
+					  <tr>
+						<th>Post</th>
+						<th>Date</th>
+						<th>Result</th>
+						<th>Reason</th>
+					  </tr>
+					</thead>
+					<tbody id="analyze-tbody">
+					  
+					</tbody>
+				 </table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h1 class="text-center" id="modal-h1">This is a large modal.</h1>
+          <div class="spinner-border" role="status">
+			  <span class="sr-only">Loading...</span>
+			</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
